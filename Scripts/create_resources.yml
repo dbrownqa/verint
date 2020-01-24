@@ -1,22 +1,24 @@
 - name: Build Infracture Resources
   hosts: all
   tasks:
-    # Create a simple s3 bucket
-    # - s3_bucket:
-    #     name: verint-bucket
-    #     state: present
-    # - rds:
-    #     command: create
-    #     instance_name: verint-db
-    #     db_engine: postgres
-    #     size: 10
-    #     instance_type: db.t2.micro
-    #     region: us-east-2
-    #     username: veritadmin
-    #     password: superstrongpass
-    #     tags:
-    #       Environment: prod
-    #       Application: verint
+    #Create a simple s3 bucket
+    - s3_bucket:
+        name: verint-bucket
+        state: present
+    #Create Postgres RDS DB
+    - rds:
+        command: create
+        instance_name: verint-db
+        db_engine: postgres
+        size: 10
+        instance_type: db.t2.micro
+        region: us-east-2
+        username: veritadmin
+        password: superstrongpass
+        tags:
+          Environment: prod
+          Application: verint
+    #Create DynamoDB Table
     - dynamodb_table:
         name: Music
         region: us-east-2
