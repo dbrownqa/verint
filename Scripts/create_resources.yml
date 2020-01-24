@@ -26,7 +26,7 @@
         range_key_type: STRING
         read_capacity: 2
         write_capacity: 2
-          tags:
+        tags:
             Environment: prod
             Application: verint
 
