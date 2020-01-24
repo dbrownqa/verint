@@ -3,7 +3,7 @@
   tasks:
     #Create a simple s3 bucket
     - s3_bucket:
-        name: verint-bucket
+        name: verint-bucket2
         state: present
     #Create Postgres RDS DB
     - rds:

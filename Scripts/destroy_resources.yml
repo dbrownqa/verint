@@ -3,7 +3,7 @@
   tasks:
     # Destroy s3 bucket
     - s3_bucket:
-        name: verint-bucket
+        name: verint-bucket2
         state: absent
         force: yes
     # Postgres RDS DB
