@@ -12,8 +12,8 @@
         size: 10
         instance_type: db.t2.micro
         region: us-east-2
-        username: pg_admin
-        password: pg_strongpassword
+        username: veritadmin
+        password: superstrongpass
         tags:
           Environment: prod
           Application: verint
