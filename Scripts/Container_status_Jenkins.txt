@@ -1,5 +1,6 @@
 [ec2-user@ip-172-31-43-108 ~]$ docker ps
 CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                                                                     NAMES
+f3a6f39b8397        bitnami/jenkins:2            "/app-entrypoint.sh …"   12 seconds ago      Up 10 seconds       0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp, 0.0.0.0:443->8443/tcp   ec2-user_jenkins_1
 111bdd76f133        ansible/awx_task:9.1.1       "/tini -- /bin/sh -c…"   21 hours ago        Up 21 hours         8052/tcp                                                                  awx_task
 785d8f00ecc9        ansible/awx_web:9.1.1        "/tini -- /bin/sh -c…"   21 hours ago        Up 21 hours         0.0.0.0:80->8052/tcp                                                      awx_web
 ecf73e2c4647        postgres:10                  "docker-entrypoint.s…"   21 hours ago        Up 21 hours         5432/tcp                                                                  awx_postgres
