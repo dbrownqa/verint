@@ -1,0 +1,30 @@
+ansible-playbook 2.8.5
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/var/lib/awx/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.6/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.6.8 (default, Oct  7 2019, 17:58:22) [GCC 8.2.1 20180905 (Red Hat 8.2.1-3)]
+Using /etc/ansible/ansible.cfg as config file
+PLAYBOOK: create_resources.yml *************************************************
+1 plays in Scripts/create_resources.yml
+PLAY [Build Infracture Resources] **********************************************
+TASK [Gathering Facts] *********************************************************
+task path: /tmp/awx_51_66bx6dci/project/Scripts/create_resources.yml:1
+ok: [localhost]
+META: ran handlers
+TASK [s3_bucket] ***************************************************************
+task path: /tmp/awx_51_66bx6dci/project/Scripts/create_resources.yml:5
+changed: [localhost] => {"changed": true, "name": "verint-bucket2", "policy": null, "requester_pays": false, "tags": {}, "versioning": {"MfaDelete": "Disabled", "Versioning": "Disabled"}}
+TASK [rds] *********************************************************************
+task path: /tmp/awx_51_66bx6dci/project/Scripts/create_resources.yml:9
+ [WARNING]: The value 10 (type int) in a string field was converted to '10'
+(type string). If this does not look like what you expect, quote the entire
+value to ensure it does not change.
+changed: [localhost] => {"changed": true, "instance": {"DBName": null, "allocated_storage": 10, "auto_minor_version_upgrade": false, "availability_zone": null, "backup_retention": 1, "backup_window": "06:04-06:34", "character_set_name": null, "create_time": null, "db_name": null, "db_subnet_groups": {"description": "default", "name": "default", "status": "complete", "subnets": [{"availability_zone": {"name": "us-east-2a", "provisioned_iops_capable": false}, "identifier": "subnet-9cca92f4", "status": "active"}, {"availability_zone": {"name": "us-east-2b", "provisioned_iops_capable": false}, "identifier": "subnet-0520b67f", "status": "active"}, {"availability_zone": {"name": "us-east-2c", "provisioned_iops_capable": false}, "identifier": "subnet-44c03908", "status": "active"}], "vpc_id": "vpc-36e8d85e"}, "endpoint": null, "engine": "postgres", "engine_version": "11.5", "id": "verint-db2", "instance_type": "db.t2.micro", "iops": null, "latest_restorable_time": null, "license_model": "postgresql-license", "maintenance_window": "fri:10:19-fri:10:49", "multi_zone": false, "option_groups": [{"option_group_name": "default:postgres-11", "status": "in-sync"}], "parameter_groups": [{"parameter_apply_status": "in-sync", "parameter_group_name": "default.postgres11"}], "pending_modified_values": {"allocated_storage": null, "backup_retention_period": null, "db_instance_class": null, "db_instance_identifier": null, "engine_version": null, "iops": null, "master_user_password": "****", "multi_az": null, "port": null}, "port": null, "publicly_accessible": true, "read_replica_source_dbinstance_identifier": null, "replication_source": null, "secondary_availability_zone": null, "status": "creating", "username": "veritadmin", "vpc_security_groups": "sg-aa24c8c7"}}
+TASK [dynamodb_table] **********************************************************
+task path: /tmp/awx_51_66bx6dci/project/Scripts/create_resources.yml:22
+changed: [localhost] => {"changed": true, "hash_key_name": "Artist", "hash_key_type": "STRING", "indexes": [], "range_key_name": "SongTitle", "range_key_type": "STRING", "read_capacity": 2, "region": "us-east-2", "table_name": "Music", "table_status": "CREATING", "tags": {"Application": "verint", "Environment": "prod"}, "write_capacity": 2}
+META: ran handlers
+META: ran handlers
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
