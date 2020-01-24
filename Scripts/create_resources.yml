@@ -11,6 +11,7 @@
         db_engine: postgres
         size: 10
         instance_type: db.t2.micro
+        region: us-east-2
         username: pg_admin
         password: pg_strongpassword
         tags:
