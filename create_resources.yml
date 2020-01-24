@@ -3,5 +3,5 @@
   tasks:
     # Create a simple s3 bucket
     - s3_bucket:
-        name: VerintBucket
+        name: verint-bucket
         state: present
