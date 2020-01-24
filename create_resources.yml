@@ -1,5 +1,7 @@
-
-# Create a simple s3 bucket
-- s3_bucket:
-    name: VerintBucket
-    state: present
+- name: Build Infracture Resources
+  hosts: all
+  tasks:
+    # Create a simple s3 bucket
+    - s3_bucket:
+        name: VerintBucket
+        state: present
