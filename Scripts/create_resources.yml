@@ -5,16 +5,28 @@
     # - s3_bucket:
     #     name: verint-bucket
     #     state: present
-    - rds:
-        command: create
-        instance_name: verint-db
-        db_engine: postgres
-        size: 10
-        instance_type: db.t2.micro
+    # - rds:
+    #     command: create
+    #     instance_name: verint-db
+    #     db_engine: postgres
+    #     size: 10
+    #     instance_type: db.t2.micro
+    #     region: us-east-2
+    #     username: veritadmin
+    #     password: superstrongpass
+    #     tags:
+    #       Environment: prod
+    #       Application: verint
+    - dynamodb_table:
+        name: Music
         region: us-east-2
-        username: veritadmin
-        password: superstrongpass
-        tags:
-          Environment: prod
-          Application: verint
+        hash_key_name: Artist
+        hash_key_type: STRING
+        range_key_name: SongTitle
+        range_key_type: STRING
+        read_capacity: 2
+        write_capacity: 2
+          tags:
+            Environment: prod
+            Application: verint
 

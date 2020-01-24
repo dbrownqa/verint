@@ -6,3 +6,11 @@
         name: verint-bucket
         state: absent
         force: yes
+    - rds:
+        command: delete
+        region: us-east-2
+        instance_name: verint-db
+    - dynamodb_table:
+        name: Music
+        region: us-east-2
+        state: absent
