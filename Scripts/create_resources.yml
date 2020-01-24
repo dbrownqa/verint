@@ -8,7 +8,7 @@
     #Create Postgres RDS DB
     - rds:
         command: create
-        instance_name: verint-db
+        instance_name: verint-db2
         db_engine: postgres
         size: 10
         instance_type: db.t2.micro

@@ -10,7 +10,7 @@
     - rds:
         command: delete
         region: us-east-2
-        instance_name: verint-db
+        instance_name: verint-db2
     # Destroy DynamoDB Table
     - dynamodb_table:
         name: Music
